@@ -1,0 +1,70 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:"montserrat",sans-serif !important;
+}
+h1{
+    color:white;
+    margin-top: 40px;
+}
+.wrapper{
+    /* background-image: url("../../assets/img/maha1.jpg"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    background-color: grey;
+}
+
+.input-group{
+    margin-top: 20px;
+}
+.input-group-addon{
+    background: transparent;
+    border:0px;
+    border-bottom: 0px;
+    border-bottom: 2px solid gray;
+    color:white; 
+    font-size:20px;
+    padding:10px;
+    
+}
+
+.form-control{
+    background:transparent;
+    border:0px;
+    border-radius:0px;
+    border-bottom: 2px solid gray;
+    height:45px;
+    padding:20px;
+    font-size: 20px;
+    color:white
+
+}
+.col-md-6{
+    margin-top:90px;
+    box-shadow: 1px 4px 40opx black;
+    background: #00000066;
+    margin-top: 90px;
+    height:400px;
+    box-shadow:1px 4px 40px black
+}
+
+p{
+    margin-top: 20px;
+    font-size: 19px;
+    color:white; 
+}
+
+.btn-default{
+    font-size: 19px;
+    margin-left:190px;
+    border-radius:0px;
+    width:190px;
+    margin-top:20px;
+    color:white;
+}
+
+.btn-default:hover{
+    border:1px solid white;
+}

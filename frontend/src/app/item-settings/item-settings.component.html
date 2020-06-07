@@ -1,0 +1,311 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12" > 
+            <div class="row">
+                <div class="col-md-6" style="padding-left:270px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <form  #category  = "ngForm" (ngSubmit)="categoryAdd(category.value);">
+                            <div class="row form-group align-items-center">
+                                <div class="col-md-12">
+                                    <label for="">Category Name</label>
+                                    <input type="text" class="form-control" name="category_name" ngModel required>
+                                </div>
+                                </div>
+                                <div class="row form-group align-items-center">
+                                    <div class="col-md-12">
+                                        <label for="">Agency Name</label>
+                                        <input type="text" class="form-control" name="agency_name" ngModel required>
+                                    </div>
+                                    </div>
+                                
+                                    <div class="row form-group align-items-center">
+                                        <div class="col-md-12">
+                                            <label for="">quality</label>
+                                            <select name="quality" class="form-control" name="quality" ngModel>
+                                                <option value="">select</option>
+                                                <option value="first">First</option>
+                                                <option value="secound">Secound</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                    <div class="footer row" style="float:right">
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-primary">Add</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button  type="button" class="btn btn-danger">clear</button>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="text-center" style="margin-top: 10px;">category list</h4>
+                        <div *ngFor="let cat of category_list">
+                            <li >{{cat.category_name}}</li>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+     
+    <!-- <div class="col-md-4">
+    <div class="card" style="overflow-y:scroll;overflow-x:hidden;">
+        <div class="card-body">
+            <form action="">
+                <div class="row form-group align-items-center">
+                <div class="col-md-12">
+                    <label for="">category</label>
+                    <input type="text" class="form-control">
+                </div>
+                </div>
+                <div class="row form-group align-items-center">
+                    <div class="col-md-12">
+                        <label for="">Item Code</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group align-items-center">
+                <div class="col-md-12">
+                    <label for="">Item Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                </div>
+                <div class="row form-group align-items-center">
+                <div class="col-md-12 form-group">
+                    <label for="">Tamil Name</label>
+                    <input type="text" class="form-control">  
+                </div>
+                </div>
+                <div class="row form-group align-items-center">
+                <div class="col-md-12">
+                    <label for="">Selling Price</label>
+                    <input type="text" class="form-control">
+                </div>
+                </div>
+                <div class="row form-group align-items-center">
+
+                <div class="col-md-12">
+                    <label for="">GST%</label>
+                    <input type="text" class="form-control">
+                </div>
+                </div>
+                <div class="row form-group align-items-center">
+
+                <div class="col-md-12">
+                    <label for="">HSN Code</label>
+                    <input type="text" class="form-control">
+                </div>
+                </div>
+                <div class="footer row" style="float:right">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary">Add</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger">clear</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+        </div>
+</div> -->
+        <!-- </div>
+    </div>
+</div>   -->
+<!-- table for add the products -->
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div style="float:right;margin-top:100px">
+            <button type="button" class="btn btn-primary"  (click)="addNewProduct(newproduct)">ADD</button>&nbsp;
+        </div>
+<div class="card" style="padding:10px;margin-top:160px;" >
+    <div class="card-body">
+        <div style="float:right;padding-bottom: 1%;">
+            <input type="text" class="form-control" placeholder="search" (input)="onSearchChange($event.target.value)">
+        </div>
+<table class="table table-bordered text-center" style="height:300px;overflow-y:scroll" >
+    <thead>
+      <tr>
+        <th style="color:white"> product code</th>
+        <th style="color:white">product name</th>
+        <th style="color:white">tamil name</th>
+        <th style="color:white">units</th>
+        <th style="color:white">price</th>
+        <th style="color:white">old price</th>
+        <th style="color:white">price update</th>
+        <th style="color:white">product added date</th>
+        <th style="color:white">edit/delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of product_list; let i=index;">
+        <td>{{prod.product_code}}</td>
+        <td>{{prod.product_name}}</td>
+        <td>{{prod.tamil_name}}</td>
+        <td>{{prod.unit}}</td>
+        <td>{{prod.price}}</td>
+        <td>{{prod.old_price}}</td>
+        <td>{{prod.price_update}}</td>
+        <td>{{prod.product_added_date}}</td>
+        <!-- <td> <a href="#" (click)="editProduct(newproduct)"><i class="fa fa-edit" ></i></a>&nbsp;<a href=""><i class="fa fa-trash"></i></a></td> -->
+        <td><button class="btn btn-info" (click)="editdetails(editproduct);editProducts(prod)" ><i class="fa fa-edit"></i></button>&nbsp;
+            <button class="btn btn-info mo-auto" (click)="deleteproduct(prod)"><i class="fa fa-trash"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+</div>
+</div>
+
+<div class="col-md-1"></div>
+</div>
+
+
+<!-- edit the new products -->
+
+<ng-template #newproduct>  
+    <div class="modal-header">  
+      <h4 class="modal-title pull-left">Product Details</h4>  
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">  
+        <span aria-hidden="true">×</span>  
+      </button>  
+    </div>  
+    {{new_product.value|json}}
+   
+    <form  #new_product  = "ngForm" (ngSubmit)="newproduct_details(new_product.value);">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+  
+            <div class="col-md-6">
+                <label for="">Product code</label>
+                <input type="text" class="form-control" name="product_code" ngModel />
+            </div>
+  
+            <div class="col-md-6">
+              <label for="">Product name</label>
+              <input type="text" class="form-control" name="product_name" ngModel/>
+          </div>
+  
+          <div class="col-md-6">
+              <label for="">Unit</label>
+              <input type="text" class="form-control" name="unit" ngModel>
+          </div>
+          
+          <div class="col-md-6">
+              <label for="">Tamil name</label>
+              <input type="text" class="form-control" name="tamil_name" ngModel/>
+          </div>
+  
+          <div class="col-md-6">
+              <label for="">Price</label>
+              <input type="text" class="form-control" name="price" ngModel>
+  
+          </div>
+  
+          <div class="col-md-6">
+              <label for="">Old price</label>
+              <input type="text" class="form-control" name="old_price" ngModel>
+          </div>
+  
+          <div class="col-md-6">
+              <label for="">price update</label>
+              <input type="date" class="form-control" name="price_update" ngModel>
+          </div>
+  
+          <div class="col-md-6">
+              <label for="">product added date</label>
+              <input type="date" class="form-control" name="product_added_date" ngModel>
+          </div>
+      </div>
+      <div class="col-md-3"></div>
+  
+        </div>  
+   
+    </div>  
+    <div class="modal-footer">  
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>  
+    </div>  
+  </form>
+  </ng-template>  
+
+
+
+<ng-template #editproduct>  
+  <div class="modal-header">  
+    <h4 class="modal-title pull-left">Product Details</h4>  
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">  
+      <span aria-hidden="true">×</span>  
+    </button>  
+  </div>  
+  <form  #editproducts  = "ngForm" (ngSubmit)="editproduct_details(editproducts.value);">
+  <div class="modal-body">
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+
+          <div class="col-md-6">
+              <label for="">Product code</label>
+              <input type="text" class="form-control" name="product_code" [(ngModel)]="editobject.product_code"/>
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Product name</label>
+            <input type="text" class="form-control" name="product_name" [(ngModel)]="editobject.product_name"/>
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Unit</label>
+            <input type="text" class="form-control" name="unit" [(ngModel)]="editobject.unit">
+        </div>
+        
+        <div class="col-md-6">
+            <label for="">Tamil name</label>
+            <input type="text" class="form-control" name="tamil_name" [(ngModel)]="editobject.tamil_name"/>
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Price</label>
+            <input type="text" class="form-control" name="price" [(ngModel)]="editobject.price">
+
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Old price</label>
+            <input type="text" class="form-control" name="old_price" [(ngModel)]="editobject.old_price">
+        </div>
+
+        <div class="col-md-6">
+            <label for="">price update</label>
+            <input type="date" class="form-control" name="price_update" [(ngModel)]="editobject.price_update">
+        </div>
+
+        <div class="col-md-6">
+            <label for="">product added date</label>
+            <input type="date" class="form-control" name="product_added_date" [(ngModel)]="editobject.product_added_date">
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+
+      </div>  
+ 
+  </div>  
+  <div class="modal-footer">  
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>  
+  </div>  
+</form>
+</ng-template> 
+
+
+
+  
